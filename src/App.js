@@ -1,4 +1,5 @@
 import "./App.css";
+import Tooltip from "./components/Tooltip";
 
 function App() {
     return (
@@ -9,11 +10,21 @@ function App() {
             </section>
             <section>
                 <h2>Demo Area 1</h2>
-                <div>Something here</div>
+                <div>
+                    <br />
+                    Something here
+                    <Tooltip />
+                </div>
             </section>
             <section>
                 <h2>Demo Area 2</h2>
-                <div>Something here</div>
+                <div>
+                    <Tooltip />
+                    <br />
+                    Something here
+                    <br />
+                    <Tooltip />
+                </div>
             </section>
         </div>
     );
