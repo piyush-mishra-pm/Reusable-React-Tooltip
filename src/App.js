@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Tooltip from "./components/Tooltip";
 import InputText from "./components/InputText";
+import DropdownMenu from "./components/DropdownMenu";
 
 import "./App.css";
 
@@ -11,6 +12,12 @@ function App() {
         setTooltipText(newTooltipText);
     };
 
+    const [direction, setDirection] = useState("top");
+    const onTooltipDirectionChange = (newTooltipDirection) => {
+        setDirection(newTooltipDirection);
+        console.log(direction);
+    };
+
     return (
         <div>
             <h1>Reusable Tooltip Project</h1>
@@ -18,6 +25,8 @@ function App() {
                 <p>Introductory text</p>
                 <p>What tooltip to show? Leave empty for default tooltip text.</p>
                 <InputText onTextChange={onTooltipTextChange} />
+                <p>And direction</p>
+                <DropdownMenu onDirectionChange={setDirection} />
             </section>
             <section>
                 <h2>Demo Area 1</h2>
@@ -32,7 +41,7 @@ function App() {
                 <h2>Demo Area 2</h2>
                 <div>
                     <p>Dynamic tooltip text</p>
-                    <Tooltip content={tooltipText} direction="bottom">
+                    <Tooltip content={tooltipText} direction={direction}>
                         Something here
                     </Tooltip>
                 </div>
