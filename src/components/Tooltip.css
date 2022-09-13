@@ -1,0 +1,99 @@
+/* CSS Variables */
+:root {
+    --tooltip-bg-color: black;
+    --tooltip-triangle-size: 10px;
+    --tooltip-text-color: white;
+    --tooltip-margin: 35px;
+}
+
+/* Wrapping of the content for which tooltip is shown.
+Position is kept relative, so that an absolute position
+wrt to this can be used to position tooltip content.*/
+.Tooltip-Wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+/*
+    Following tooltip and arrow will be configured for 4 positions.
+*/
+/* Absolute position of tooltip helps to position the tooltip relative to the element. */
+.Tooltip-Tip {
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px;
+    color: var(--tooltip-text-color);
+    background: var(--tooltip-bg-color);
+    font-size: 14px;
+    font-family: sans-serif;
+    line-height: 1;
+    z-index: 9999;
+    white-space: nowrap;
+}
+
+/* CSS Bordered Triangle for Arrow*/
+.Tooltip-Tip::before {
+    content: " ";
+    border-width: var(--tooltip-triangle-size);
+    margin-left: calc(var(--tooltip-triangle-size) * -1);
+    left: 50%;
+    border: solid transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    pointer-events: none;
+}
+/*
+    Configuring above tooltip and arrow for 4 positions.
+*/
+/* 1. Top tooltip*/
+.Tooltip-Tip.top {
+    top: calc(var(--tooltip-margin) * -1);
+}
+/* 1. Top tooltip-arrow*/
+.Tooltip-Tip.top::before {
+    top: 100%;
+    border-top-color: var(--tooltip-bg-color);
+}
+
+/* 2. Right tooltip*/
+.Tooltip-Tip.right {
+    top: 50%;
+    left: calc(100% + var(--tooltip-margin));
+    transform: translateX(0) translateY(-50%);
+}
+/* 2. Right tooltip-arrow*/
+.Tooltip-Tip.right::before {
+    top: 50%;
+    left: calc(var(--tooltip-triangle-size) * -1);
+    transform: translateX(0) translateY(-50%);
+    border-right-color: var(--tooltip-bg-color);
+}
+
+/* 3. Bottom tooltip*/
+.Tooltip-Tip.bottom {
+    bottom: calc(var(--tooltip-margin) * -1);
+}
+/* 3. Bottom tooltip-arrow*/
+.Tooltip-Tip.bottom::before {
+    bottom: 100%;
+    border-bottom-color: var(--tooltip-bg-color);
+}
+
+/* 4. Left tooltip*/
+.Tooltip-Tip.left {
+    left: auto;
+    top: 50%;
+    right: calc(100% + var(--tooltip-margin));
+    transform: translateX(0) translateY(-50%);
+}
+/* 4. Left tooltip-arrow*/
+.Tooltip-Tip.left::before {
+    left: auto;
+    top: 50%;
+    right: calc(var(--tooltip-triangle-size) * -2);
+    transform: translateX(0) translateY(-50%);
+    border-left-color: var(--tooltip-bg-color);
+}
