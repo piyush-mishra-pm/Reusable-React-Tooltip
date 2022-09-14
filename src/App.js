@@ -36,26 +36,33 @@ function App() {
             <section className="section-with-boundary flex-vertical">
                 <div className="text-heading">Static Baked tooltips</div>
                 <div>
-                    <p>baked tooltip text</p>
+                    <p>
+                        Tooltip can be wrapped around HTML or JSX elements, and given custom tooltip text and directions
+                        (as shown for below 4 elements).
+                    </p>
                     <div className="flex-horizontal">
-                        <div className="flex-vertical section-with-boundary">
+                        <div className="section-with-boundary">
+                            <p>Around text element</p>
                             <Tooltip content="Tooltip Baked content" direction="top">
-                                Something here
+                                <span className="hoverable">Hover me!</span>
                             </Tooltip>
                         </div>
-                        <div className="flex-vertical section-with-boundary">
-                            <Tooltip content="Tooltip Baked content" direction="top">
-                                Something here
+                        <div className="section-with-boundary">
+                            <p>Around button</p>
+                            <Tooltip content="This button wont do anything" direction="left">
+                                <button>Click Me Not</button>
                             </Tooltip>
                         </div>
-                        <div className="flex-vertical section-with-boundary">
-                            <Tooltip content="Tooltip Baked content" direction="top">
-                                Something here
+                        <div className="section-with-boundary">
+                            <p>Around image</p>
+                            <Tooltip content="Thats a tree image on Pexels.com" direction="right">
+                                <img src="https://images.pexels.com/photos/13272658/pexels-photo-13272658.jpeg?auto=compress&cs=tinysrgb&h=130" />
                             </Tooltip>
                         </div>
-                        <div className="flex-vertical section-with-boundary">
-                            <Tooltip content="Tooltip Baked content" direction="top">
-                                Something here
+                        <div className="section-with-boundary">
+                            <p>Around JSX: A Text Input</p>
+                            <Tooltip content="Idle Text Input element" direction="bottom">
+                                <InputText label="Write" />
                             </Tooltip>
                         </div>
                     </div>
@@ -64,18 +71,50 @@ function App() {
             <section className="section-with-boundary flex-vertical">
                 <div className="text-heading">Dynamic Tooltips</div>
                 <div>
-                    <div>
-                        <p>What tooltip to show? Leave empty for default tooltip text.</p>
+                    <p>
+                        Can also dynamically change tooltips on elements, using exposed props to event handlers. Change
+                        tooltip text and direction below, to create a common tooltip for all the different elements
+                        below.
+                    </p>
+                    <div className="flex-vertical section-with-boundary">
                         <InputText onTextChange={onTooltipTextChange} />
-                        <p>And direction</p>
                         <DropdownMenu onDirectionChange={setDirection} />
                     </div>
-                    <p>Dynamic tooltip text</p>
-                    <Tooltip content={tooltipText} direction={direction}>
-                        <p className="hoverable">Something here</p>
-                    </Tooltip>
+                </div>
+                <div>
+                    <p>
+                        Now see the above set tooltip text and direction being applied to all the different elements
+                        below.
+                    </p>
+                    <div className="flex-vertical">
+                        <div className="section-with-boundary">
+                            <p>Around text element</p>
+                            <Tooltip content={tooltipText} direction={direction}>
+                                <span className="hoverable">Hover me!</span>
+                            </Tooltip>
+                        </div>
+                        <div className="section-with-boundary">
+                            <p>Around button</p>
+                            <Tooltip content={tooltipText} direction={direction}>
+                                <button>Click Me Not</button>
+                            </Tooltip>
+                        </div>
+                        <div className="section-with-boundary">
+                            <p>Around image</p>
+                            <Tooltip content={tooltipText} direction={direction}>
+                                <img src="https://images.pexels.com/photos/13272658/pexels-photo-13272658.jpeg?auto=compress&cs=tinysrgb&h=130" />
+                            </Tooltip>
+                        </div>
+                        <div className="section-with-boundary">
+                            <p>Around JSX: A Text Input</p>
+                            <Tooltip content={tooltipText} direction={direction}>
+                                <InputText label="Write" />
+                            </Tooltip>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <footer></footer>
         </div>
     );
 }

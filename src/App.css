@@ -53,7 +53,8 @@ body {
     border: 3px solid var(--color-acc1-dark-100);
     background-color: var(--color-acc22-100);
 }
-header {
+header,
+footer {
     height: 3rem;
     font-size: 2rem;
     font-weight: var(--font-wt-heading);

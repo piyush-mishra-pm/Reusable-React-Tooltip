@@ -13,7 +13,7 @@ const DropdownMenu = (props) => {
 
     return (
         <label>
-            Choose a direction
+            {props.label || "Choose Direction"}&nbsp;
             <select name="cars" value={direction} onChange={(e) => onDirectionChange(e.target.value)}>
                 <option value="top">Top</option>
                 <option value="bottom">Bottom</option>

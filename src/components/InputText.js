@@ -15,7 +15,7 @@ const InputText = (props) => {
     return (
         <>
             <label>
-                {props.label}
+                {props.label || "Write Tooltip text"}&nbsp;
                 <input value={text} onChange={(e) => onTextChange(e.target.value)} />
             </label>
         </>
