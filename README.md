@@ -4,6 +4,8 @@ A simple, reusable react tooltip. Can be wrapped around any HTML / JSX entity, a
 
 Page shows usage examples too.
 
+Made as part of CodingNinja's Full Stack Web Developer Coding Bootcamp, React module.
+
 ---
 
 ### Video Walkthrough:
@@ -22,12 +24,15 @@ cd reusable-tooltip
 # install react and package dependencies.
 npm i
 
-# default browser will open the webpage.
+# will build the project and run in the default browser.
+npm start
 ```
+
+---
 
 ### Usage examples:
 
-If you want to add a tooltip element around an HTML/JSX element (say an img), then can use following code.
+If you want to add a tooltip element around an HTML/JSX element (say an img), then can use following code. More examples can be found in src/App.js
 
 ```javascript
 // Import the tooltip (present in src/components/Tooltip.js).
@@ -41,4 +46,28 @@ If you want to add a tooltip element around an HTML/JSX element (say an img), th
     {/*Img that needs a tooltip*/}
     <img src="img-url" />
 </Tooltip>
+```
+
+---
+
+### Code Structure:
+
+```
+reusable-tooltip
+├─ package.json
+├─ public
+│  ├─ favicon.ico
+│  ├─ index.html
+│  └─ manifest.json
+├─ README.md
+└─ src
+    ├─ App.css              (Main CSS class for webpage)
+    ├─ App.js               (Main React component, contaning Tooltip usage examples)
+    ├─ components           (React Components)
+    │  ├─ DropdownMenu.js   (React Component for choosing direction of tooltip)
+    │  ├─ InputText.js      (React Component for text content of tooltip)
+    │  ├─ Tooltip.js        (React Component for Tooltip)
+    │  └─ Tooltip.css       (Styling for Tooltip)
+    └─ index.js             (main js file calling the whole app).
+
 ```
