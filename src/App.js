@@ -74,7 +74,7 @@ function App() {
                     <p>
                         Can also dynamically change tooltips on elements, using exposed props to event handlers. Change
                         tooltip text and direction below, to create a common tooltip for all the different elements
-                        below.
+                        below. Defaults are text content as 'Tooltip' and direction as 'Top'.
                     </p>
                     <div className="flex-vertical section-with-boundary">
                         <InputText onTextChange={onTooltipTextChange} />
