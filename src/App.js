@@ -15,7 +15,11 @@ function App() {
     const [direction, setDirection] = useState("top");
     const onTooltipDirectionChange = (newTooltipDirection) => {
         setDirection(newTooltipDirection);
-        console.log(direction);
+    };
+
+    const [delay, setDelay] = useState(100);
+    const onTooltipDelayChange = (newDelay) => {
+        setDelay(newDelay);
     };
 
     return (
@@ -38,29 +42,29 @@ function App() {
                 <div>
                     <p>
                         Tooltip can be wrapped around HTML or JSX elements, and given custom tooltip text and directions
-                        (as shown for below 4 elements).
+                        (as shown for below 4 elements), and appearance delays.
                     </p>
                     <div className="flex-horizontal">
                         <div className="section-with-boundary">
-                            <p>Around text element</p>
-                            <Tooltip content="Tooltip Baked content" direction="top">
+                            <p>Around text element (pos:top, delay:100ms)</p>
+                            <Tooltip content="Text element with tooltip" direction="top" delay={100}>
                                 <span className="hoverable">Hover me!</span>
                             </Tooltip>
                         </div>
                         <div className="section-with-boundary">
-                            <p>Around button</p>
-                            <Tooltip content="This button wont do anything" direction="left">
+                            <p>Around button (pos:left, delay:500ms)</p>
+                            <Tooltip content="This button wont do anything" direction="left" delay={500}>
                                 <button>Click Me Not</button>
                             </Tooltip>
                         </div>
                         <div className="section-with-boundary">
-                            <p>Around image</p>
-                            <Tooltip content="Thats a tree image on Pexels.com" direction="right">
+                            <p>Around image (pos:right, delay:900ms)</p>
+                            <Tooltip content="Thats a tree image on Pexels.com" direction="right" delay={900}>
                                 <img src="https://images.pexels.com/photos/13272658/pexels-photo-13272658.jpeg?auto=compress&cs=tinysrgb&h=130" />
                             </Tooltip>
                         </div>
                         <div className="section-with-boundary">
-                            <p>Around JSX: A Text Input</p>
+                            <p>Around JSX: A Text Input (pos:bottom)</p>
                             <Tooltip content="Idle Text Input element" direction="bottom">
                                 <InputText label="Write" />
                             </Tooltip>
@@ -73,41 +77,42 @@ function App() {
                 <div>
                     <p>
                         Can also dynamically change tooltips on elements, using exposed props to event handlers. Change
-                        tooltip text and direction below, to create a common tooltip for all the different elements
-                        below. Defaults are text content as 'Tooltip' and direction as 'Top'.
+                        tooltip text, direction and appearance below, to create a common tooltip for the following
+                        elements. Defaults are text content as 'Tooltip', direction as 'Top' and delay as 100 ms.
                     </p>
                     <div className="flex-vertical section-with-boundary">
                         <InputText onTextChange={onTooltipTextChange} />
                         <DropdownMenu onDirectionChange={setDirection} />
+                        <InputText label="Appearance delay (millisec)" onTextChange={setDelay} type="number" />
                     </div>
                 </div>
                 <div>
                     <p>
-                        Now see the above set tooltip text and direction being applied to all the different elements
-                        below.
+                        Now see the above set tooltip text, direction and appearance delay being applied to all the
+                        different elements below.
                     </p>
                     <div className="flex-vertical">
                         <div className="section-with-boundary">
                             <p>Around text element</p>
-                            <Tooltip content={tooltipText} direction={direction}>
+                            <Tooltip content={tooltipText} direction={direction} delay={delay}>
                                 <span className="hoverable">Hover me!</span>
                             </Tooltip>
                         </div>
                         <div className="section-with-boundary">
                             <p>Around button</p>
-                            <Tooltip content={tooltipText} direction={direction}>
+                            <Tooltip content={tooltipText} direction={direction} delay={delay}>
                                 <button>Click Me Not</button>
                             </Tooltip>
                         </div>
                         <div className="section-with-boundary">
                             <p>Around image</p>
-                            <Tooltip content={tooltipText} direction={direction}>
+                            <Tooltip content={tooltipText} direction={direction} delay={delay}>
                                 <img src="https://images.pexels.com/photos/13272658/pexels-photo-13272658.jpeg?auto=compress&cs=tinysrgb&h=130" />
                             </Tooltip>
                         </div>
                         <div className="section-with-boundary">
                             <p>Around JSX: A Text Input</p>
-                            <Tooltip content={tooltipText} direction={direction}>
+                            <Tooltip content={tooltipText} direction={direction} delay={delay}>
                                 <InputText label="Write" />
                             </Tooltip>
                         </div>

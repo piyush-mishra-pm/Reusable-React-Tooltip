@@ -21,7 +21,7 @@ const Tooltip = (props) => {
     const showTooltip = () => {
         timeoutAppear = setTimeout(() => {
             setVisible(true);
-        }, props.delay || 400);
+        }, props.delay || 100);
     };
 
     const hideTooltip = () => {

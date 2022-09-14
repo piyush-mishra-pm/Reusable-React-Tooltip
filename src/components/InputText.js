@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 /*
-    Listens for text change input and notifies parent of the changed text input.
+    Listens for text (or number) change input and notifies parent of the changed text input.
 */
 
 const InputText = (props) => {
@@ -16,7 +16,7 @@ const InputText = (props) => {
         <>
             <label>
                 {props.label || "Write Tooltip text"}&nbsp;
-                <input value={text} onChange={(e) => onTextChange(e.target.value)} />
+                <input type={props.type || "text"} value={text} onChange={(e) => onTextChange(e.target.value)} />
             </label>
         </>
     );
