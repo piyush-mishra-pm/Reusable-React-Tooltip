@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;700&display=swap");
+
+body {
+    /* Color Theme Swatches in HSLA */
+    --color-dark-100: hsla(200, 96%, 9%, 1);
+    --color-acc1-dark-100: hsla(197, 76%, 30%, 1);
+    --color-acc1-light-100: hsla(170, 52%, 52%, 1);
+    --color-acc21-100: hsla(126, 66%, 76%, 1);
+    --color-acc22-100: hsla(91, 94%, 86%, 1);
+
+    font-family: "Noto Sans", sans-serif;
+    --font-wt-heading: 700;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.section-with-boundary {
+    border-radius: var(--local--border-radius, 10px);
+    margin: 1rem;
+    padding: 1rem;
+    border-style: solid;
+    border-color: var(--local-border-color, var(--color-dark-100));
+    border-width: var(--local-border-width, medium);
+    background-color: var(--local-bg-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex-vertical {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.flex-horizontal {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-heading {
+    font-weight: var(--font-wt-heading);
+    font-size: 1.5rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hoverable {
+    padding: 0.25rem;
+    margin: 0.5rem;
+    border: 3px solid transparent;
+    background-color: var(--color-acc21-100);
+    transition-duration: 100ms;
 }
-
-.App-link {
-  color: #61dafb;
+.hoverable:hover {
+    border: 3px solid var(--color-acc1-dark-100);
+    background-color: var(--color-acc22-100);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: var(--font-wt-heading);
+    background-color: var(--color-dark-100);
+    color: var(--color-acc22-100);
+    margin: 0;
+    padding: 0;
 }
