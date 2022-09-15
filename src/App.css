@@ -7,6 +7,9 @@ body {
     --color-acc1-light-100: hsla(170, 52%, 52%, 1);
     --color-acc21-100: hsla(126, 66%, 76%, 1);
     --color-acc22-100: hsla(91, 94%, 86%, 1);
+    --color-acc23-50: rgb(248, 255, 242);
+
+    background-color: var(--color-acc1-light-100);
 
     font-family: "Noto Sans", sans-serif;
     --font-wt-heading: 700;
@@ -23,6 +26,10 @@ body {
     border-color: var(--local-border-color, var(--color-dark-100));
     border-width: var(--local-border-width, medium);
     background-color: var(--local-bg-color);
+}
+
+section.section-with-boundary {
+    --local-bg-color: var(--color-acc23-50);
 }
 
 .flex-vertical {

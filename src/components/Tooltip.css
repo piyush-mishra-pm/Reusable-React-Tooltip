@@ -1,8 +1,8 @@
 /* CSS Variables */
 :root {
-    --tooltip-bg-color: black;
+    --color-dark-100: hsla(200, 96%, 9%, 1);
     --tooltip-triangle-size: 10px;
-    --tooltip-text-color: white;
+    --color-acc22-100: hsla(91, 94%, 86%, 1);
     --tooltip-margin: 35px;
 }
 
@@ -19,15 +19,14 @@ wrt to this can be used to position tooltip content.*/
 */
 /* Absolute position of tooltip helps to position the tooltip relative to the element. */
 .Tooltip-Tip {
+    color: var(--color-acc22-100);
+    background: var(--color-dark-100);
     position: absolute;
     border-radius: 4px;
     left: 50%;
     transform: translateX(-50%);
     padding: 6px;
-    color: var(--tooltip-text-color);
-    background: var(--tooltip-bg-color);
     font-size: 14px;
-    font-family: sans-serif;
     line-height: 1;
     z-index: 9999;
     white-space: nowrap;
@@ -55,7 +54,7 @@ wrt to this can be used to position tooltip content.*/
 /* 1. Top tooltip-arrow*/
 .Tooltip-Tip.top::before {
     top: 100%;
-    border-top-color: var(--tooltip-bg-color);
+    border-top-color: var(--color-dark-100);
 }
 
 /* 2. Right tooltip*/
@@ -69,7 +68,7 @@ wrt to this can be used to position tooltip content.*/
     top: 50%;
     left: calc(var(--tooltip-triangle-size) * -1);
     transform: translateX(0) translateY(-50%);
-    border-right-color: var(--tooltip-bg-color);
+    border-right-color: var(--color-dark-100);
 }
 
 /* 3. Bottom tooltip*/
@@ -79,7 +78,7 @@ wrt to this can be used to position tooltip content.*/
 /* 3. Bottom tooltip-arrow*/
 .Tooltip-Tip.bottom::before {
     bottom: 100%;
-    border-bottom-color: var(--tooltip-bg-color);
+    border-bottom-color: var(--color-dark-100);
 }
 
 /* 4. Left tooltip*/
@@ -95,5 +94,5 @@ wrt to this can be used to position tooltip content.*/
     top: 50%;
     right: calc(var(--tooltip-triangle-size) * -2);
     transform: translateX(0) translateY(-50%);
-    border-left-color: var(--tooltip-bg-color);
+    border-left-color: var(--color-dark-100);
 }
