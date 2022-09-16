@@ -6,9 +6,13 @@ Page shows usage examples too.
 
 Made as part of CodingNinja's Full Stack Web Developer Coding Bootcamp, React module.
 
+Deployed at: https://reusable-react-tooltip-demo.netlify.app
+
 ---
 
 ### Video Walkthrough:
+
+> [![Video Walkthrough](https://img.youtube.com/vi/v-h_6jZicpI/maxresdefault.jpg)](https://youtu.be/v-h_6jZicpI)
 
 ---
 
