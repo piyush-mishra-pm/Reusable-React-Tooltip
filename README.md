@@ -12,10 +12,6 @@ Deployed at: https://reusable-react-tooltip-demo.netlify.app
 
 ### Video Walkthrough:
 
-Link: https://youtu.be/v-h_6jZicpI
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v-h_6jZicpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 [![Video Walkthrough](https://img.youtube.com/vi/v-h_6jZicpI/maxresdefault.jpg)](https://youtu.be/v-h_6jZicpI)
 
 ---
